@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uchka ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    overflow:hidden;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(to top,#0f2027,#203a43,#2c5364);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+/* Moon */
+.moon{
+    position:absolute;
+    top:70px;
+    right:100px;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:radial-gradient(circle,#fff 40%,#ddd 70%,#bbb 100%);
+    box-shadow:0 0 50px rgba(255,255,255,0.8);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 30px rgba(255,255,255,0.5);}
+    to{box-shadow:0 0 70px rgba(255,255,255,1);}
+}
+
+/* Stars */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:45px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    text-align:center;
+    box-shadow:0 0 25px rgba(255,255,255,0.3);
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#203a43;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ffccd5;
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<script>
+for(let i=0;i<120;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration=(Math.random()*2+1)+"s";
+    document.body.appendChild(star);
+}
+</script>
+
+<div class="card">
+    <h1>🌙 Uchka ❤️💘💍</h1>
+    <p>
+        Миний хамгийн нандин хүн.<br><br>
+        Чамайг гомдоосондоо үнэхээр уучлал гуйж байна.<br>
+        Чи миний амьдралын хамгийн тод гэрэл шүү ✨<br><br>
+        Намайг уучлаарай.
+    </p>
+    <button onclick="alert('Би чамд маш их хайртай ❤️')">
+    </button>
+</div>
+
+</body>
+</html>
